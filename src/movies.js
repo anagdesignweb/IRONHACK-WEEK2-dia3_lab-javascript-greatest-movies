@@ -115,7 +115,7 @@ const moviesOrdenadas = veintePrimeros.sort((primero, segundo) => {
     }
 });
 
-const moviesTitles = [moviesOrdenadas].map((movie => {return movie.title}));
+const moviesTitles = moviesOrdenadas.map((movie => {return movie.title}));
 // console.log(moviesOrdenadas);
 return moviesTitles;
 
