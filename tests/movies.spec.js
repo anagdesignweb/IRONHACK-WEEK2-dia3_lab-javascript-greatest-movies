@@ -113,6 +113,7 @@ describe('Function "howManyMovies"', () => {
 describe('Function "scoresAverage"', () => {
   it('should be declared', () => {
     expect(typeof scoresAverage).toBe('function');
+    
   });
 
   it('should return a number', () => {
