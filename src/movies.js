@@ -3,7 +3,9 @@
 // How could you "clean" a bit this array and make it unified (without duplicates)?
 function getAllDirectors(moviesArray) {
 
-    const directors = moviesArray.map((movie) => movie.director);
+    const directors = moviesArray.map((movie) => 
+        
+        movie.director);
 
         return directors;
 
@@ -61,24 +63,52 @@ function dramaMoviesScore(moviesArray) {
 
         if(movie.genre.indexOf("Drama") !== -1) {
             return true;
-        }
-    });
- //   console.log(moviesDrama);
-    const promedioDrama = moviesDrama.reduce( function (total, movie) {   
-        return total + movie.score;
-    }, 0) / moviesDrama.length;
-
-
-    if (moviesDrama.length === 0) {
+        } 
+       
         return 0;
-    } else {
-            return Number(promedioDrama).toFixed(2);
+    });
+
+   //console.log(moviesDrama);
+
+
+    const puntuacion = moviesDrama.map((movie) =>      
+        movie.score)
+    console.log(puntuacion.length);
+
+
+    let sum = 0;
+
+    for (let i = 0; i < puntuacion.length; i++) {
+            if (moviesDrama.length === 0) {
+                return 0;
+            } else {
+                sum += puntuacion[i];
+            }
     }
+    console.log(sum);
+
+
+    // const promedioDrama = puntuacion.reduce( function (total, movie) {   
+    //     return total + movie.score;
+    // }, 0) / puntuacion.length;
+
+    // console.log(promedioDrama);
+
+
+    // if (moviesDrama.length === 0) {
+    //     return 0;
+    // } else {
+    //         return Number(promedioDrama).toFixed(2);
+    // }
    // console.log(promedioDrama.toFixed(2));
 
 }
 
-// console.log(dramaMoviesScore(movies));
+
+
+//  console.log(dramaMoviesScore(movies));
+
+
 
 
 
@@ -123,59 +153,6 @@ return moviesTitles;
 }
 
 
-
-
-
-
-
-// function orderAlphabetically(moviesArray) {
-    
-
-// // if (moviesArray.length <= 20){
-// //     return moviesArray;
-// //    }
-
-// console.log(moviesArray.length);
-
-// const veintePrimeras = moviesArray.filter( function (movie) {    
-//     if (moviesArray.length <= 20){
-//         return true;
-//        }
-//      //    console.log(movie);
-// });
-
-// console.log(veintePrimeras.length)
-
-// // const moviesOrdenadas = veintePrimeras.sort((primero, segundo) => {
-// //     if (primero.title > segundo.title) {
-// //         return 1;
-// //     } else {
-// //         return -1;
-// //     }
-// // });
-// // return moviesOrdenadas;
-
-// }
-
-// console.log(orderAlphabetically(movies))
-
-// function orderAlphabetically(moviesArray) {
-
-
-//         const movies = moviesArray.slice(0,20).map((elemento) => {
-//             return elemento.title;
-//         });
-//     console.log (movies)
-//         const moviesOrd = movies.sort((despues,antes) =>{ 
-    
-//             if (antes.title > despues.title ) return 1;
-//             if (antes.title < despues.title ) return -1;
-//             return 0
-//         })
-//         return moviesOrd
-   
-
-// }
 
 
 // BONUS - Iteration 7: Time Format - Turn duration of the movies from hours to minutes
